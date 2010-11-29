@@ -41,7 +41,7 @@ namespace Linq
 			            let userId = int.Parse(user.Attribute("Id").Value)
 			            let name = user.Element("GivenName").Value
 			            join score in Scores on userId equals score.UserId
-						group score by name into g
+			            group score by name into g
 			            select new {Name = g.Key, Score = g.Sum(x => x.Value)};
 
 
